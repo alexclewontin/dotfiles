@@ -1,0 +1,17 @@
+# ALIASES
+
+alias ls='exa -G'
+alias ll='exa -alh'
+alias la='exa -a'
+alias l='exa -CF'
+alias lla='exa -alh'
+
+alias make='gmake'
+alias find='gfind'
+
+alias bd='cd ..'
+alias cd='cdls'
+
+cdls() { \cd "$@" && exa; }
+
+alias dotconfig='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

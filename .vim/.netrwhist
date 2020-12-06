@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/lewontin/Documents/development/Projects/Clock/clock_plot'
+let g:netrw_dirhist_9='/Volumes/LinuxKernelSource/OPENWRT/openwrt/target/linux/ramips/dts'
+let g:netrw_dirhist_8='/Volumes/LinuxKernelSource/OPENWRT/openwrt/target/linux/ramips/mt76x8/base-files/etc/board.d'
+let g:netrw_dirhist_7='/Volumes/LinuxKernelSource/OPENWRT/openwrt/target/linux/ramips/mt76x8/base-files/etc'
+let g:netrw_dirhist_6='/Volumes/LinuxKernelSource/OPENWRT/openwrt/target/linux/ramips/mt76x8/base-files'
+let g:netrw_dirhist_5='/Volumes/LinuxKernelSource/OPENWRT/openwrt/target/linux/ramips/mt76x8'
+let g:netrw_dirhist_4='/Volumes/LinuxKernelSource/OPENWRT/openwrt/target/linux/ramips'
+let g:netrw_dirhist_3='/Volumes/LinuxKernelSource/OPENWRT/openwrt/target/linux/ramips/mt76x8'
+let g:netrw_dirhist_2='/Volumes/LinuxKernelSource/OPENWRT/openwrt/target/linux/ramips/mt76x8/base-files'
+let g:netrw_dirhist_1='/Volumes/LinuxKernelSource/OPENWRT/openwrt-imagebuilder-ramips-mt76x8.Linux-x86_64/include'
