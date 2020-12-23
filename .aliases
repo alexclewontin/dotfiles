@@ -1,17 +1,30 @@
 # ALIASES
 
+
+type exa > /dev/null
+
+if [[ $? -eq 0 ]]; then
 alias ls='exa -G'
 alias ll='exa -alh'
 alias la='exa -a'
-alias l='exa -CF'
 alias lla='exa -alh'
+fi
 
+type gmake > /dev/null
+
+if [[ $? -eq 0 ]]; then
 alias make='gmake'
+fi
+
+type gfind > /dev/null
+
+if [[ $? -eq 0 ]]; then
 alias find='gfind'
+fi
 
 alias bd='cd ..'
 alias cd='cdls'
 
-cdls() { \cd "$@" && exa; }
+cdls() { \cd "$@" && ls; }
 
 alias dotconfig='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
