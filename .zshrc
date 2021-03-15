@@ -5,13 +5,13 @@ eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 #eval "$(pipenv --completion)"
 
-export GOPATH="/Users/lewontin/.go"
+export GOPATH="$HOME/.go"
 export GOROOT="/usr/local/opt/go/libexec"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$GOROOT/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/lewontin/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
