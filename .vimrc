@@ -24,14 +24,11 @@ call plug#end()
 set number
 set noshowmode
 
-" yank to clipboard
-if has("clipboard")
-   set clipboard=unnamed " copy to the system clipboard
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
-     if has("unnamedplus") " X11 support
-         set clipboard+=unnamedplus
-     endif
-endif
-
+set clipboard=unnamed
+set clipboard+=unnamedplus
 set ttymouse=xterm2
 set mouse=a
