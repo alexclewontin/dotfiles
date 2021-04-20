@@ -1,9 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+source ~/.path
 
-eval "$(rbenv init -)"
-eval "$(pyenv init -)"
-#eval "$(pipenv --completion)"
+# eval "$(rbenv init -)"
+
+if (( $+commands[pyenv] )) ; then
+	eval "$(pyenv init -)"
+fi
+
+# eval "$(pipenv --completion)"
 
 export GOPATH="$HOME/.go"
 export GOROOT="/usr/local/opt/go/libexec"
@@ -71,7 +76,13 @@ ZSH_THEME="acl"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pyenv google-cloud-sdk golang miniterm)
+plugins=(git command-not-found zsh-completions)
+
+if (( $+commands[pyenv] )) ; then
+	plugins+=(pyenv)
+fi
+
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,6 +117,5 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.aliases
 
-source ~/.path
 
 . /usr/local/etc/profile.d/z.sh
