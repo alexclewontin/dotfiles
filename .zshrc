@@ -2,11 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 source ~/.path
 
-# eval "$(rbenv init -)"
-
-if (( $+commands[pyenv] )) ; then
-	eval "$(pyenv init -)"
-fi
+(( $+commands[rbenv] )) && eval "$(rbenv init -)"
+(( $+commands[pyenv] )) && eval "$(pyenv init -)"
+(( $+commands[kubectl] )) && source <(kubectl completion zsh)
 
 # eval "$(pipenv --completion)"
 
@@ -78,9 +76,7 @@ ZSH_THEME="acl"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git command-not-found zsh-completions)
 
-if (( $+commands[pyenv] )) ; then
-	plugins+=(pyenv)
-fi
+(( $+commands[pyenv] )) && plugins+=(pyenv)
 
 autoload -U compinit && compinit
 
