@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 source ~/.path
+source ~/.profile
 
 (( $+commands[rbenv] )) && eval "$(rbenv init -)"
 (( $+commands[pyenv] )) && eval "$(pyenv init -)"
@@ -8,8 +9,6 @@ source ~/.path
 
 # eval "$(pipenv --completion)"
 
-export GOPATH="$HOME/.go"
-export GOROOT="/usr/local/opt/go/libexec"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$GOROOT/bin:$PATH"
 
@@ -99,9 +98,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-
-export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

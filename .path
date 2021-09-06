@@ -10,6 +10,7 @@ export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 # Created by `userpath` on 2020-05-13 20:40:58
 export PATH="$PATH:/Users/lewontin/.local/bin"
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+export PATH="$PATH:~/.local/bin"
 
 # Add homebrew sbin
 export PATH="/usr/local/sbin:$PATH"
