@@ -27,4 +27,4 @@ alias cd='cdls'
 
 cdls() { \cd "$@" && ls; }
 
-alias dotconfig='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotconfig='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
