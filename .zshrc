@@ -3,12 +3,6 @@
 source ~/.path
 source ~/.profile
 
-(( $+commands[rbenv] )) && eval "$(rbenv init -)"
-(( $+commands[pyenv] )) && eval "$(pyenv init -)"
-(( $+commands[kubectl] )) && source <(kubectl completion zsh)
-
-# eval "$(pipenv --completion)"
-
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$GOROOT/bin:$PATH"
 
@@ -75,7 +69,11 @@ ZSH_THEME="acl"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git command-not-found zsh-completions)
 
-(( $+commands[pyenv] )) && plugins+=(pyenv)
+(( $+commands[rbenv] )) && eval "$(rbenv init -)"
+(( $+commands[pyenv] )) && eval "$(pyenv init -)" && plugins+=(pyenv)
+#(( $+commands[kubectl] )) && source <(kubectl completion zsh)
+
+# eval "$(pipenv --completion)"
 
 autoload -U compinit && compinit
 
