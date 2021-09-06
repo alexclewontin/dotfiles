@@ -1,1 +1,10 @@
+# macOS filesystem artifacts
 .DS_Store
+.Spotlight-V100
+.Trashes
+._*
+
+# secrets
+secring.*
+id_rsa
+id_dsa
