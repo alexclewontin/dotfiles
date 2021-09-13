@@ -24,3 +24,5 @@ fi
 
 # Add codeql
 export PATH="$PATH:$HOME/.codeql/codeql"
+
+export PATH="$PATH:/usr/local/go/bin"

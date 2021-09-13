@@ -107,5 +107,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.aliases
 
-
-. /usr/local/etc/profile.d/z.sh
+. /usr/local/etc/profile.d/z/z.sh

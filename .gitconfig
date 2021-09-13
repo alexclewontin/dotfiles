@@ -1,9 +1,10 @@
 [user]
-	email = alex.c.lewontin@gmail.com
+	email = alex.lewontin@canonical.com
 	name = Alex Lewontin
-	signingKey = CAF8A28E36F46C2C714AD1F10E546139BFD2AA90
+	signingKey = DA0967AD667A5A7F006A166E13C15C7E6D0BC9D0
 [credential]
-	helper = osxkeychain
+	helper = store
+	# helper = osxkeychain
 [credential "https://source.developers.google.com"]
 	helper = gcloud.sh
 [commit]

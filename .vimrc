@@ -32,3 +32,5 @@ set clipboard=unnamed
 set clipboard+=unnamedplus
 set ttymouse=xterm2
 set mouse=a
+
+set directory=$HOME/.vim/swapfiles//
