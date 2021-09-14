@@ -1,10 +1,5 @@
-[user]
-	email = alex.lewontin@canonical.com
-	name = Alex Lewontin
-	signingKey = DA0967AD667A5A7F006A166E13C15C7E6D0BC9D0
-[credential]
-	helper = store
-	# helper = osxkeychain
+[include]
+	path = ./.gitconfig-local
 [credential "https://source.developers.google.com"]
 	helper = gcloud.sh
 [commit]
@@ -14,7 +9,7 @@
 [init]
 	defaultBranch = main
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore-global
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

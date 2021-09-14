@@ -1,23 +1,24 @@
 # ALIASES
 
-
-type exa > /dev/null
-
-if [[ $? -eq 0 ]]; then
-alias ls='exa -G'
-alias ll='exa -alh'
-alias la='exa -a'
-alias lla='exa -alh'
-alias lt='lt2'
-alias lt2='exa -aTL 2 --ignore-glob=.git'
-alias lt3='exa -aTL 3 --ignore-glob=.git'
-alias lt4='exa -aTL 4 --ignore-glob=.git'
+if [[ -x $(command -v exa) ]]; then
+	alias ls='exa -G'
+	alias ll='exa -alh'
+	alias la='exa -a'
+	alias lla='exa -alh'
+	alias lt='lt2'
+	alias lt2='exa -aTL 2 --ignore-glob=.git'
+	alias lt3='exa -aTL 3 --ignore-glob=.git'
+	alias lt4='exa -aTL 4 --ignore-glob=.git'
 fi
 
-type batcat > /dev/null
+if [[ -x $(command -v batcat) ]]; then
+	alias cat='batcat'
+elif [[ -x $(command -v bat) ]]; then
+	alias cat='bat'
+fi
 
-if [[ $? -eq 0 ]]; then
-alias cat='batcat'
+if ! [[ -x $(command -v sudoedit) ]]; then
+	alias sudoedit='sudo -e'
 fi
 
 alias bd='cd ..'
@@ -27,4 +28,6 @@ cdls() { \cd "$@" && ls; }
 
 alias dotconfig='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-alias vim='gvim -v'
+if [[ -x $(command -v gvim) ]]; then
+	alias vim='gvim -v'
+fi
