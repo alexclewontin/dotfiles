@@ -24,7 +24,7 @@ fi
 alias bd='cd ..'
 alias cd='cdls'
 
-cdls() { \cd "$@" && ls; }
+cdls() { \cd "$@" && pwd && ls; }
 
 alias dotconfig='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
