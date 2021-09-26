@@ -1,3 +1,5 @@
+#!/bin/sh
+
 sudo apt install zsh git -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --bare https://github.com/alexclewontin/dotfiles.git $HOME/.dotfiles
