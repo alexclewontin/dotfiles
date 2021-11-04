@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-source ~/.path
 source ~/.profile
+source ~/.path
 
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$GOROOT/bin:$PATH"
@@ -70,7 +70,7 @@ ZSH_THEME="acl"
 plugins=(git command-not-found zsh-completions)
 
 (( $+commands[rbenv] )) && eval "$(rbenv init -)"
-(( $+commands[pyenv] )) && eval "$(pyenv init -)" && plugins+=(pyenv)
+(( $+commands[pyenv] )) && eval "$(pyenv init --path)" && plugins+=(pyenv)
 #(( $+commands[kubectl] )) && source <(kubectl completion zsh)
 
 # eval "$(pipenv --completion)"
