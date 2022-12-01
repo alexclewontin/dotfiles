@@ -1,0 +1,70 @@
+# ALIASES
+
+if [[ -x $(command -v exa) ]]; then
+	alias ls='exa -G'
+	alias ll='exa -alh'
+	alias la='exa -a'
+	alias lla='exa -alh'
+	alias lt='lt2'
+	alias lt2='exa -aTL 2 --ignore-glob=.git'
+	alias lt3='exa -aTL 3 --ignore-glob=.git'
+	alias lt4='exa -aTL 4 --ignore-glob=.git'
+fi
+
+if [[ -x $(command -v batcat) ]]; then
+	alias cat='batcat'
+elif [[ -x $(command -v bat) ]]; then
+	alias cat='bat'
+fi
+
+if ! [[ -x $(command -v sudoedit) ]]; then
+	alias sudoedit='sudo -e'
+fi
+
+alias bd='cd ..'
+alias cd='cdls'
+
+cdls() { \cd "$@" && pwd && ls; }
+
+alias dotconfig='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+if [[ -x $(command -v gvim) ]]; then
+	alias vim='gvim -v'
+fi
+
+targz() { _tarz gz "$@" }
+tarxz() { _tarz xz "$@" }
+tarbz() { _tarz bz "$@" }
+
+_tarz() {
+	if [ -z "$2" ] ; then
+		echo "usage tar$1 <filename(s)>"
+	else
+		case "$1" in
+			"gz")
+				flags="-cvzf"
+				comp="gzip"
+				;;
+			"xz")
+				flags="-cvJf"
+				;;
+			"bz")
+				flags="-cvjf"
+				;;
+		esac
+		tar --totals $flags "$2.tar.$1" ${@:2}
+		size="$(stat -c %s $2.tar.$1)"
+		echo "Compressed size: $size ($(printf $size | numfmt --to=iec-i --suffix=B --format=%3f))"
+	fi
+}
+
+untar() {
+	filename=$(basename -- "$1")
+	filename="${filename%.tar*}"
+	if [ -z "$filename" ] ; then
+		echo "usage: untar <tarfile>"
+	else
+		mkdir -p "$filename"
+		tar --totals -xvf "$1" -C "$filename"
+	fi
+}
