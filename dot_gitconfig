@@ -1,0 +1,34 @@
+[include]
+	path = ./.gitconfig-local
+[credential "https://source.developers.google.com"]
+	helper = gcloud.sh
+[commit]
+	gpgSign = true
+[gpg]
+	program = gpg
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = ~/.gitignore-global
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	remotes = remote -v
+	branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+
+	sl = log --oneline --decorate -20
+	sla = log --oneline --decorate --graph -20
+	slap = log --oneline --decorate --graph --all
+
+	lg = lg1
+	#lg-short = log --decorate --graph --abbrev-commit --all
+	#lg-medium = log --decorate --graph --abbrev-commit --all
+	#lg-long = log --decorate --graph --abbrev-commit --all
+
+	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+	lg3 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+
