@@ -1,6 +1,8 @@
 README.md
 LICENSE
 
+.oh-my-zsh/cache/completions
+
 # Jammy and Noble do not have sufficiently new eza
 {{- if eq .chezmoi.osRelease.versionCodename "jammy" "noble"  }}
 .config/eza/theme.yml
