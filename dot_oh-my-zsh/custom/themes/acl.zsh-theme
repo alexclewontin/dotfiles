@@ -108,8 +108,11 @@ ZSH_THEME_GIT_TIME_SINCE_COMMIT_LONG="%{$fg[red]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[white]%}"
 
 # LS colors, made with https://geoff.greer.fm/lscolors/
-export LSCOLORS="ExfxbxdxCxegedabagacad"
-export LS_COLORS='di=1;34:ln=35:so=31:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+if [[ "$DISABLE_LS_COLORS" != true ]]; then
+	export LSCOLORS="ExfxbxdxCxegedabagacad"
+	export LS_COLORS='di=1;34:ln=35:so=31:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+fi
+
 export GREP_COLOR='1;33'
 
 _newline() {

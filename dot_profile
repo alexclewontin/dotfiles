@@ -29,5 +29,6 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export EDITOR="vim"
+export EZA_CONFIG_DIR="$HOME/.config/eza"
 
 source $HOME/.profile-local

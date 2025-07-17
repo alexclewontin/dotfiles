@@ -1,0 +1,3 @@
+{{- if eq .chezmoi.osRelease.versionCodename "jammy" "noble"  }}
+.config/eza/theme.yml
+{{- end }}

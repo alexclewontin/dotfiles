@@ -35,7 +35,11 @@ ZSH_THEME="acl"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# If we have the exa command and a eza theme.yml file, disable ls colors to defer
+# to the eza theme
+if [[ -x $(command -v exa) && -f "$EZA_CONFIG_DIR/theme.yml" ]]; then
+	DISABLE_LS_COLORS="true"
+fi
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
