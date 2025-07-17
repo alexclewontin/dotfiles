@@ -1,5 +1,7 @@
 [include]
 	path = ./.gitconfig-local
+[user]
+	name = Alex Lewontin
 [credential "https://source.developers.google.com"]
 	helper = gcloud.sh
 [commit]
