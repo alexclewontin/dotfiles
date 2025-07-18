@@ -1,0 +1,6 @@
+{{ if eq .chezmoi.os "linux" }}
+.pyenv:
+    type: "git-repo"
+    url: "https://github.com/pyenv/pyenv.git"
+    refreshPeriod: "168h"
+{{ end }}

@@ -1,0 +1,3 @@
+if [[ ! -z $PYENV_ROOT ]]; then
+	export PATH="$PYENV_ROOT/bin:$PATH"
+fi
