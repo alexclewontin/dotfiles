@@ -1,14 +1,14 @@
 # ALIASES
 
-if [[ -x $(command -v exa) ]]; then
-	alias ls='exa -G'
-	alias ll='exa -alh'
-	alias la='exa -a'
-	alias lla='exa -alh'
+if [[ -x $(command -v eza) ]]; then
+	alias ls='eza -G'
+	alias ll='eza -alh'
+	alias la='eza -a'
+	alias lla='eza -alh'
 	alias lt='lt2'
-	alias lt2='exa -aTL 2 --ignore-glob=.git'
-	alias lt3='exa -aTL 3 --ignore-glob=.git'
-	alias lt4='exa -aTL 4 --ignore-glob=.git'
+	alias lt2='eza -aTL 2 --ignore-glob=.git'
+	alias lt3='eza -aTL 3 --ignore-glob=.git'
+	alias lt4='eza -aTL 4 --ignore-glob=.git'
 fi
 
 if [[ -x $(command -v batcat) ]]; then
