@@ -75,7 +75,7 @@ fi
 plugins=(git command-not-found zsh-completions)
 
 (( $+commands[rbenv] )) && eval "$(rbenv init -)"
-(( $+commands[pyenv] )) && eval "$(pyenv init --path)" && eval "$(pyenv init -)" && plugins+=(pyenv)
+(( $+commands[pyenv] )) && eval "$(pyenv init --path)" && eval "$(pyenv init -)" && plugins+=(pyenv) && eval "$(pyenv virtualenv-init -)"
 
 source <(kubectl completion zsh)
 
