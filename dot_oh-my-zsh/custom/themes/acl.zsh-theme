@@ -1,15 +1,21 @@
 # ACL ZSH Theme
 
 PROMPT='$(_user_host)${_current_dir} $(git_prompt_info) $(_python_version)
-%{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
+%(!.#.$) '
 
-PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '
+PROMPT2='< '
 
 RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
 
 local _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%} "
 local _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
 local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
+
+setopt PROMPT_SUBST
+
+function _prompt_char() {
+    echo "${_COMMAND_STATUS}"
+}
 
 function _current_dir() {
   local _max_pwd_length="65"
@@ -34,14 +40,6 @@ function _user_host() {
 function _vi_status() {
   if {echo $fpath | grep -q "plugins/vi-mode"}; then
     echo "$(vi_mode_prompt_info)"
-  fi
-}
-
-function _ruby_version() {
-  if {echo $fpath | grep -q "plugins/rvm"}; then
-    echo "%{$fg[magenta]%}$(rvm_prompt_info)%{$reset_color%}"
-  elif {echo $fpath | grep -q "plugins/rbenv"}; then
-    echo "%{$fg[magenta]%} Ruby: $(rbenv_prompt_info)%{$reset_color%}"
   fi
 }
 
@@ -80,12 +78,6 @@ function _git_time_since_commit() {
     echo "$color$commit_age%{$reset_color%}"
   fi
 }
-
-if [[ $USER == "root" ]]; then
-  CARETCOLOR="red"
-else
-  CARETCOLOR="white"
-fi
 
 MODE_INDICATOR="%{$fg_bold[yellow]%}❮%{$reset_color%}%{$fg[yellow]%}❮❮%{$reset_color%}"
 
