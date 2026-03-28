@@ -1,5 +1,6 @@
 {{ if eq .chezmoi.os "linux-ubuntu" -}}
 #!/bin/bash
+# vim: set ft=sh:
 
 sudo apt-get install -y {{ range (concat .packages.everywhere .packages.linux.apts) }}{{ . }} {{ end }}
 {{ end -}}

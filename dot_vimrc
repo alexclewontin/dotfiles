@@ -23,6 +23,8 @@ call plug#end()
 
 set number
 set noshowmode
+set modeline
+set modelines=5
 
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"

@@ -1,5 +1,6 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
+# vim: set ft=sh:
 
 if ! command -v brew &> /dev/null; then
     BREW=/opt/homebrew/bin/brew
