@@ -4,6 +4,7 @@ packages:
     - 'bat'
     - 'git'
     - 'tree'
+    - 'ripgrep'
     darwin:
         brews:
         - 'pyenv'

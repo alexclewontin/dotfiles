@@ -1,0 +1,20 @@
+
+## Behaviors
+If a project has an existing test framework, when I report a bug, before diagnosing and fixing, you should first create a test that reproduces it. Then diagnose and fix, if appropriate.
+
+## Tools
+The following tools will always be installed:
+    - `tree`
+    - `ripgrep`
+    - `eza`
+{{- if eq .chezmoi.os "darwin" }}
+    - `bat`
+{{- else if eq .chezmoi.os "linux" }}
+    - `batcat`
+{{- end }}
+
+My systems *may* have the following non-standard shell configurations, depending on how your shell execution tool operates:
+    - `cat` is aliased to `bat`
+    - `ls` is aliased to `eza`
+    - `cd` is aliased `cd $@ && pwd && ls`
+
