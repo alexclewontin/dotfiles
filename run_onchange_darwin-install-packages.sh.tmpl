@@ -8,7 +8,7 @@ else
 fi
 
 $BREW bundle --file=/dev/stdin <<EOF
-{{ range .packages.darwin.brews -}}
+{{ range (concat .packages.everywhere .packages.darwin.brews) -}}
 brew {{ . | quote }}
 {{ end -}}
 EOF

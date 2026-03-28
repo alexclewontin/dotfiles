@@ -1,4 +1,8 @@
 packages:
+    everywhere:
+    - 'eza'
+    - 'bat'
+    - 'git'
     darwin:
         brews:
         - 'pyenv'
