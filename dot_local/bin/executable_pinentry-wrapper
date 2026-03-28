@@ -1,0 +1,16 @@
+#!/bin/sh
+# Route to TUI pinentry for SSH sessions (PINENTRY_USER_DATA=USE_CURSES=1),
+# graphical pinentry otherwise.
+case "$PINENTRY_USER_DATA" in
+    *USE_CURSES=1*)
+        exec pinentry-curses "$@"
+        ;;
+    *)
+        # Prefer pinentry-mac on macOS (native dialog), fall back to pinentry
+        if command -v pinentry-mac > /dev/null 2>&1; then
+            exec pinentry-mac "$@"
+        else
+            exec pinentry "$@"
+        fi
+        ;;
+esac

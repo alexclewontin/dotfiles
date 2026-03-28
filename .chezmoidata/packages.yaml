@@ -3,3 +3,7 @@ packages:
         brews:
         - 'pyenv'
         - 'pyenv-virtualenv'
+        - 'pinentry-mac'
+    linux:
+        apts:
+        - 'pinentry-curses'
