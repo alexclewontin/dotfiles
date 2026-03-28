@@ -3,6 +3,7 @@ packages:
     - 'eza'
     - 'bat'
     - 'git'
+    - 'tree'
     darwin:
         brews:
         - 'pyenv'
