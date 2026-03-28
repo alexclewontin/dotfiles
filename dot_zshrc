@@ -26,3 +26,6 @@ plugins=(git command-not-found zsh-completions)
 source <(kubectl completion zsh)
 
 source $ZSH/oh-my-zsh.sh
+
+# Re-source aliases after oh-my-zsh to prevent it from overwriting them
+source ~/.aliases
