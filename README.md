@@ -9,6 +9,7 @@ These primarily assume the use of a few tools. Specifically, they cover:
 - zsh
 - oh-my-zsh
 - vim
+- vim-plug
 - git
 - exa
 - pyenv
