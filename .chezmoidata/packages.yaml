@@ -13,3 +13,4 @@ packages:
     linux:
         apts:
         - 'pinentry-curses'
+        - 'python3-argcomplete'
