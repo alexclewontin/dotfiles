@@ -30,5 +30,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export EDITOR="vim"
 export EZA_CONFIG_DIR="$HOME/.config/eza"
-
+export GOPATH="$HOME/.go"
 source $HOME/.profile-local
