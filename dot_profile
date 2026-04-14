@@ -26,6 +26,29 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Detect agent-managed shells (Claude Code, GitHub Copilot, etc.)
+# CLAUDECODE is set by `claude` by default
+# GITHUB_COPILOT_VSCODE is a custom variable set in ~/.config/Code/User/settings.json
+#     "chat.tools.terminal.terminalProfile.linux": {
+#         "path": "zsh",
+#         "env": {
+#             "GITHUB_COPILOT_VSCODE": "1",
+#         }
+#     }
+# with an equivalent for osx
+# This will require extension for other agent harnesses
+if [ -n "$CLAUDECODE" ] || [ -n "$GITHUB_COPILOT_VSCODE" ]; then
+    export AGENT_MANAGED_SHELL=1
+fi
+
+# In agent-managed shells, disable paging everywhere
+if [ -n "$AGENT_MANAGED_SHELL" ]; then
+    export PAGER=cat
+    export GIT_PAGER=cat
+    export MANPAGER=cat
+    export BAT_PAGER=
+fi
+
 export PYENV_ROOT="$HOME/.pyenv"
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export EDITOR="vim"

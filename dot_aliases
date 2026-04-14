@@ -1,7 +1,6 @@
 # ALIASES
 
 if [[ -x $(command -v eza) ]]; then
-	alias ls='eza -G'
 	alias ll='eza -alh'
 	alias la='eza -a'
 	alias lla='eza -alh'
@@ -9,12 +8,17 @@ if [[ -x $(command -v eza) ]]; then
 	alias lt2='eza -aTL 2 --ignore-glob=.git'
 	alias lt3='eza -aTL 3 --ignore-glob=.git'
 	alias lt4='eza -aTL 4 --ignore-glob=.git'
+	if [[ -z "$AGENT_MANAGED_SHELL" ]]; then
+		alias ls='eza -G'
+	fi
 fi
 
-if [[ -x $(command -v batcat) ]]; then
-	alias cat='batcat'
-elif [[ -x $(command -v bat) ]]; then
-	alias cat='bat'
+if [[ -z "$AGENT_MANAGED_SHELL" ]]; then
+	if [[ -x $(command -v batcat) ]]; then
+		alias cat='batcat'
+	elif [[ -x $(command -v bat) ]]; then
+		alias cat='bat'
+	fi
 fi
 
 if ! [[ -x $(command -v sudoedit) ]]; then
@@ -22,9 +26,11 @@ if ! [[ -x $(command -v sudoedit) ]]; then
 fi
 
 alias bd='cd ..'
-alias cd='cdls'
 
 cdls() { \cd "$@" && pwd && ls; }
+if [[ -z "$AGENT_MANAGED_SHELL" ]]; then
+	alias cd='cdls'
+fi
 
 alias dotconfig='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
