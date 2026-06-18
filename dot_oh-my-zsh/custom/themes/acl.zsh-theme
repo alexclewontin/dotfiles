@@ -7,7 +7,7 @@ PROMPT2='< '
 
 RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
 
-local _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%} "
+local _current_dir="%B%F{#87c3a7}%3~%b%f "
 local _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
 local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
 
@@ -20,9 +20,9 @@ function _prompt_char() {
 function _current_dir() {
   local _max_pwd_length="65"
   if [[ $(echo -n $PWD | wc -c) -gt ${_max_pwd_length} ]]; then
-    echo "%{$fg_bold[blue]%}%-2~ ... %3~%{$reset_color%} "
+    echo "%B%F{#87c3a7}%-2~ ... %3~%b%f "
   else
-    echo "%{$fg_bold[blue]%}%~%{$reset_color%} "
+    echo "%B%F{#87c3a7}%~%b%f "
   fi
 }
 
@@ -33,7 +33,7 @@ function _user_host() {
     me="%n"
   fi
   if [[ -n $me ]]; then
-    echo "%{$fg[cyan]%}$me%{$reset_color%}:"
+    echo "%{$fg[blue]%}$me%{$reset_color%}:"
   fi
 }
 
@@ -45,7 +45,7 @@ function _vi_status() {
 
 function _python_version() {
   if {echo $fpath | grep -q "plugins/pyenv"}; then
-    echo "%{$fg[yellow]%} Python: $(pyenv_prompt_info)%{$reset_color%}"
+    echo "%F{#c3b98d} Python: $(pyenv_prompt_info)%f"
   fi
 }
 
@@ -91,7 +91,7 @@ ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%}⚑ "
 ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖ "
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%}▴ "
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[cyan]%}§ "
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[white]%}◒ "
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{#647a6b}◒ "
 
 # Colors vary depending on time lapsed.
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_SHORT="%{$fg[green]%}"

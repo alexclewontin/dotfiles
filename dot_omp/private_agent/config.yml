@@ -1,48 +1,50 @@
-modelRoles: 
+modelRoles:
   default: openai-codex/gpt-5.4
   task: openai-codex/gpt-5.4
   plan: openai-codex/gpt-5.5
   slow: openai-codex/gpt-5.5
   smol: openai-codex/gpt-5.4-mini
-retry: 
-  fallbackChains: 
-    default: 
+retry:
+  fallbackChains:
+    default:
       - anthropic/claude-sonnet-4-6
       - openrouter/deepseek/deepseek-v4-pro
-    task: 
+    task:
       - anthropic/claude-sonnet-4-6
       - openrouter/moonshotai/kimi-k2.7-code
-    plan: 
+    plan:
       - anthropic/claude-opus-4-7
       - openrouter/z-ai/glm-5.2
-    slow: 
+    slow:
       - anthropic/claude-opus-4-7
       - anthropic/z-ai/glm-5.2
     smol: 
       - anthropic/claude-haiku-4-5
       - openrouter/deepseek/deepseek-v4-flash
-memory: 
+memory:
   backend: local
-task: 
+task:
   enableLsp: true
   eager: always
-  isolation: 
+  isolation:
     mode: auto
   showResolvedModelBadge: true
 setupVersion: 1
-dev: 
-  autoqa: 
+dev:
+  autoqa:
     consent: granted
 symbolPreset: nerd
 hideThinkingBlock: false
-display: 
+display:
   showTokenUsage: true
-statusLine: 
+statusLine:
   transparent: false
   sessionAccent: true
   separator: powerline-thin
   preset: full
-branchSummary: 
+branchSummary:
   enabled: false
-bash: 
+bash:
   enabled: true
+theme:
+  dark: moss

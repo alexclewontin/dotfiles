@@ -1,0 +1,119 @@
+# moss — forest-green homelab theme (Moss)
+# Install:  cp moss.toml ~/.config/helix/themes/
+# Activate:  add  theme = "moss"  to ~/.config/helix/config.toml
+
+# ── Syntax ──
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"keyword" = "keyword"
+"keyword.control" = "keyword"
+"keyword.operator" = "operator"
+"keyword.directive" = "constant"
+"operator" = "operator"
+"punctuation" = "operator"
+"punctuation.delimiter" = "operator"
+"punctuation.bracket" = "text2"
+"string" = "string"
+"string.regexp" = "string"
+"string.special" = "string"
+"constant" = "constant"
+"constant.numeric" = "number"
+"constant.character" = "string"
+"constant.builtin" = "constant"
+"function" = "func"
+"function.builtin" = "func"
+"function.method" = "func"
+"function.macro" = "constant"
+"type" = "type"
+"type.builtin" = "type"
+"type.enum.variant" = "constant"
+"constructor" = "type"
+"variable" = "variable"
+"variable.builtin" = { fg = "constant", modifiers = ["italic"] }
+"variable.parameter" = { fg = "text", modifiers = ["italic"] }
+"variable.other.member" = "func"
+"label" = "constant"
+"namespace" = "type"
+"tag" = "tag"
+"attribute" = "attribute"
+
+# ── Markup ──
+"markup.heading" = { fg = "accent", modifiers = ["bold"] }
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "info", modifiers = ["underlined"] }
+"markup.link.text" = "accent"
+"markup.raw" = "string"
+"markup.quote" = "comment"
+
+# ── UI ──
+"ui.background" = { bg = "bg" }
+"ui.text" = "text"
+"ui.text.focus" = { fg = "text", bg = "surface2" }
+"ui.cursor" = { fg = "bg", bg = "cursor" }
+"ui.cursor.primary" = { fg = "bg", bg = "cursor" }
+"ui.cursor.match" = { fg = "accent", bg = "accentMuted" }
+"ui.cursorline.primary" = { bg = "surface" }
+"ui.linenr" = "textMuted"
+"ui.linenr.selected" = { fg = "text", modifiers = ["bold"] }
+"ui.selection" = { bg = "sel" }
+"ui.selection.primary" = { bg = "sel" }
+"ui.gutter" = { bg = "bg" }
+"ui.statusline" = { fg = "text2", bg = "surface" }
+"ui.statusline.inactive" = { fg = "textMuted", bg = "surface" }
+"ui.statusline.normal" = { fg = "bg", bg = "accent", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "bg", bg = "info", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "bg", bg = "warning", modifiers = ["bold"] }
+"ui.bufferline" = { fg = "text2", bg = "surface" }
+"ui.bufferline.active" = { fg = "text", bg = "bg" }
+"ui.popup" = { fg = "text", bg = "surface" }
+"ui.window" = { fg = "border", bg = "surface" }
+"ui.help" = { fg = "text", bg = "surface" }
+"ui.menu" = { fg = "text", bg = "surface" }
+"ui.menu.selected" = { fg = "text", bg = "accentMuted" }
+"ui.menu.scroll" = { fg = "accent", bg = "border" }
+"ui.virtual.ruler" = { bg = "borderSubtle" }
+"ui.virtual.whitespace" = "borderSubtle"
+"ui.virtual.indent-guide" = "borderSubtle"
+"ui.virtual.inlay-hint" = { fg = "textMuted", bg = "surface" }
+
+# ── Diagnostics ──
+"diagnostic.error" = { underline = { color = "danger", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "warning", style = "curl" } }
+"diagnostic.info" = { underline = { color = "info", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "accent", style = "curl" } }
+"error" = "danger"
+"warning" = "warning"
+"info" = "info"
+"hint" = "accent"
+"diff.plus" = "success"
+"diff.minus" = "danger"
+"diff.delta" = "warning"
+
+[palette]
+bg = "#0b1410"
+surface = "#101c15"
+surface2 = "#16271d"
+border = "#21372a"
+borderSubtle = "#18281f"
+text = "#e7f2ea"
+text2 = "#a0b7a8"
+textMuted = "#647a6b"
+accent = "#52dc9c"
+accentMuted = "#11271c"
+success = "#52dc9c"
+warning = "#d9c45f"
+danger = "#e26a5f"
+info = "#5fb6c9"
+sel = "#1c3a2a"
+cursor = "#52dc9c"
+comment = "#647a6b"
+keyword = "#d9c45f"
+string = "#8fe0b0"
+number = "#e0b07a"
+func = "#6fc9d9"
+type = "#9ad9c0"
+variable = "#e7f2ea"
+constant = "#b48fd9"
+operator = "#a0b7a8"
+tag = "#e26a5f"
+attribute = "#d9c45f"

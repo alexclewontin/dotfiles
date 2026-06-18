@@ -1,0 +1,28 @@
+# moss
+# Forest-green homelab theme — generated from the Moss direction
+# Drop in ~/.config/ghostty/themes/  then set:  theme = moss
+
+palette = 0=#14271c
+palette = 1=#e26a5f
+palette = 2=#52dc9c
+palette = 3=#d9c45f
+palette = 4=#5fb6c9
+palette = 5=#b48fd9
+palette = 6=#5fc9c0
+palette = 7=#cdd9cf
+palette = 8=#37524a
+palette = 9=#f0837a
+palette = 10=#72e6b1
+palette = 11=#e6d27f
+palette = 12=#7fcad9
+palette = 13=#c9a9e8
+palette = 14=#7fd9d0
+palette = 15=#f0f8f3
+
+background = #0b1410
+foreground = #e7f2ea
+cursor-color = #52dc9c
+cursor-text = #0b1410
+selection-background = #1c3a2a
+selection-foreground = #e7f2ea
+split-divider-color = #21372a

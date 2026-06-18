@@ -1,0 +1,15 @@
+onboarding = false
+[ui]
+show_agent_labels_on_pane_borders = true
+agent_panel_scope = "current"
+
+[theme]
+name = "terminal"
+
+[theme.custom]
+panel_bg = "#16271d"
+accent   = "#52dc9c"
+green    = "#52dc9c"
+blue     = "#5fb6c9"
+red      = "#e26a5f"
+yellow   = "#d9c45f"
