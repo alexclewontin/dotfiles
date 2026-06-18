@@ -1,6 +1,6 @@
 #!/bin/bash
 # vim: set ft=sh:
 # Rebuild the bat/batcat cache so the custom Moss theme registers.
-# Re-runs whenever the theme files change (hashes below trigger it).
-# themes: {{ include "dot_config/batcat/themes/Moss.tmTheme" | sha256sum }} {{ include "dot_config/batcat/themes/Moss-muted.tmTheme" | sha256sum }}
+# Re-runs when any theme is added, removed, or changed (hashes below trigger it).
+# themes:{{ range (glob (joinPath .chezmoi.sourceDir "dot_config/batcat/themes/*")) }} {{ include . | sha256sum }}{{ end }}
 {{ .cmds.bat }} cache --build
