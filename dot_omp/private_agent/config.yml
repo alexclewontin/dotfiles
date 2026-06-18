@@ -8,14 +8,19 @@ retry:
   fallbackChains: 
     default: 
       - anthropic/claude-sonnet-4-6
+      - openrouter/deepseek/deepseek-v4-pro
     task: 
       - anthropic/claude-sonnet-4-6
+      - openrouter/moonshotai/kimi-k2.7-code
     plan: 
       - anthropic/claude-opus-4-7
+      - openrouter/z-ai/glm-5.2
     slow: 
       - anthropic/claude-opus-4-7
+      - anthropic/z-ai/glm-5.2
     smol: 
       - anthropic/claude-haiku-4-5
+      - openrouter/deepseek/deepseek-v4-flash
 memory: 
   backend: local
 task: 
