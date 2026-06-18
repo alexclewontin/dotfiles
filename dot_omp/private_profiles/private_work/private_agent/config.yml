@@ -1,0 +1,44 @@
+modelRoles:
+  default: github-copilot/claude-sonnet-4.6
+  task: github-copilot/gpt-5.3-codex
+  plan: github-copilot/gpt-5.5
+  slow: github-copilot/gpt-5.5
+  smol: github-copilot/claude-haiku-4.5
+retry:
+  fallbackChains:
+    default:
+      - github-copilot/gpt-5.4
+    task:
+      - github-copilot/claude-sonnet-4.6
+      - github-copilot/gpt-5.4
+    plan:
+      - github-copilot/claude-opus-4.7
+    slow:
+      - github-copilot/claude-opus-4.7
+    smol:
+      - github-copilot/gpt-5.4-mini
+memory:
+  backend: local
+task:
+  enableLsp: true
+  eager: always
+  isolation:
+    mode: auto
+  showResolvedModelBadge: true
+setupVersion: 1
+dev:
+  autoqa:
+    consent: granted
+symbolPreset: nerd
+hideThinkingBlock: false
+display:
+  showTokenUsage: true
+statusLine:
+  transparent: false
+  sessionAccent: true
+  separator: powerline-thin
+  preset: full
+branchSummary:
+  enabled: false
+bash:
+  enabled: true

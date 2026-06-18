@@ -1,0 +1,43 @@
+modelRoles: 
+  default: openai-codex/gpt-5.4
+  task: openai-codex/gpt-5.4
+  plan: openai-codex/gpt-5.5
+  slow: openai-codex/gpt-5.5
+  smol: openai-codex/gpt-5.4-mini
+retry: 
+  fallbackChains: 
+    default: 
+      - anthropic/claude-sonnet-4-6
+    task: 
+      - anthropic/claude-sonnet-4-6
+    plan: 
+      - anthropic/claude-opus-4-7
+    slow: 
+      - anthropic/claude-opus-4-7
+    smol: 
+      - anthropic/claude-haiku-4-5
+memory: 
+  backend: local
+task: 
+  enableLsp: true
+  eager: always
+  isolation: 
+    mode: auto
+  showResolvedModelBadge: true
+setupVersion: 1
+dev: 
+  autoqa: 
+    consent: granted
+symbolPreset: nerd
+hideThinkingBlock: false
+display: 
+  showTokenUsage: true
+statusLine: 
+  transparent: false
+  sessionAccent: true
+  separator: powerline-thin
+  preset: full
+branchSummary: 
+  enabled: false
+bash: 
+  enabled: true
