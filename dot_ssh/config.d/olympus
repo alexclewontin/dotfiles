@@ -1,0 +1,4 @@
+Host *.olympus.lewont.in
+  ControlMaster    auto
+  ControlPath      ~/.ssh/sockets/%r@%h:%p.sock
+  ControlPersist   yes
