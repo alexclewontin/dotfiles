@@ -27,7 +27,14 @@ plugins=(git command-not-found zsh-completions)
 
 
 source $ZSH/oh-my-zsh.sh
-source <(kubectl completion zsh)
+if (( $+commands[kubectl] )); then
+  kubectl_completion_cache="${ZSH_CACHE_DIR:-$HOME/.cache}/kubectl-completion.zsh"
+  if [[ ! -s "$kubectl_completion_cache" || "$(command -v kubectl)" -nt "$kubectl_completion_cache" ]]; then
+    mkdir -p "${kubectl_completion_cache:h}"
+    kubectl completion zsh >| "$kubectl_completion_cache"
+  fi
+  [[ -s "$kubectl_completion_cache" ]] && source "$kubectl_completion_cache"
+fi
 
 # Re-source aliases after oh-my-zsh to prevent it from overwriting them
 source ~/.aliases
