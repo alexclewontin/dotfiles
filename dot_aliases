@@ -74,3 +74,5 @@ untar() {
 		tar --totals -xvf "$1" -C "$filename"
 	fi
 }
+
+alias zsh_zprof='time ZSH_DEBUGRC=1 zsh -i -c exit'
