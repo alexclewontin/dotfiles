@@ -9,5 +9,9 @@ fi
 
 {{ if eq .chezmoi.os "darwin" -}}
 export PATH="/opt/homebrew/bin:$PATH"
+
+if rustup_prefix="$(brew --prefix rustup 2>/dev/null)"; then
+	export PATH="$rustup_prefix/bin:$HOME/.cargo/bin:$PATH"
+fi
 {{ end -}}
 
