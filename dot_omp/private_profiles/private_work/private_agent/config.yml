@@ -26,9 +26,6 @@ task:
     mode: auto
   showResolvedModelBadge: true
 setupVersion: 1
-dev:
-  autoqa:
-    consent: granted
 symbolPreset: nerd
 hideThinkingBlock: false
 display:
@@ -42,3 +39,5 @@ branchSummary:
   enabled: false
 bash:
   enabled: true
+theme:
+  dark: moss

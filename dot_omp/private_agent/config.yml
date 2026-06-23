@@ -4,6 +4,7 @@ modelRoles:
   plan: openai-codex/gpt-5.5
   slow: openai-codex/gpt-5.5
   smol: openai-codex/gpt-5.4-mini
+  vision: openrouter/qwen/qwen3.5-plus-20260420
 retry:
   fallbackChains:
     default:
@@ -21,6 +22,8 @@ retry:
     smol:
       - anthropic/claude-haiku-4-5
       - openrouter/deepseek/deepseek-v4-flash
+codexResets:
+  autoRedeem: "yes"
 memory:
   backend: local
 task:
