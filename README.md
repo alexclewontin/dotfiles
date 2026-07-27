@@ -6,6 +6,7 @@ These are my dotfiles. There are many like them, but these ones are mine.
 
 These primarily assume the use of a few tools. Specifically, they cover:
 
+- fish
 - zsh
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 - vim
