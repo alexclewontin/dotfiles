@@ -25,7 +25,7 @@ retry:
 codexResets:
   autoRedeem: "yes"
 memory:
-  backend: local
+  backend: mnemopi
 task:
   enableLsp: true
   eager: always
@@ -34,8 +34,7 @@ task:
   showResolvedModelBadge: true
 setupVersion: 1
 dev:
-  autoqa:
-    consent: granted
+  autoqaConsent: granted
 symbolPreset: nerd
 hideThinkingBlock: false
 display:
@@ -51,3 +50,29 @@ bash:
   enabled: true
 theme:
   dark: moss
+recap:
+  enabled: false
+features:
+  unexpectedStopDetection: true
+compaction:
+  idleEnabled: true
+  idleTimeoutSeconds: 300
+providers:
+  memoryModel: online
+mnemopi:
+  proactiveLinking: true
+autolearn:
+  enabled: true
+  autoContinue: true
+lsp:
+  diagnosticsOnEdit: true
+bashInterceptor:
+  enabled: true
+shellMinimizer:
+  sourceOutlineLevel: default
+searxng:
+  endpoint: https://search.svc.olympus.lewont.in
+browser:
+  headless: false
+  cmux: false
+  enabled: false
