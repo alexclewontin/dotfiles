@@ -1,26 +1,26 @@
 modelRoles:
-  default: openai-codex/gpt-5.4
-  task: openai-codex/gpt-5.4
-  plan: openai-codex/gpt-5.5
-  slow: openai-codex/gpt-5.5
-  smol: openai-codex/gpt-5.4-mini
+  default: anthropic/claude-opus-5
+  task: anthropic/claude-sonnet-4-6
+  plan: openai-codex/gpt-5.6-sol
+  slow: openai-codex/gpt-5.6-sol
+  smol: anthropic/claude-haiku-4-5
   vision: openrouter/qwen/qwen3.5-plus-20260420
 retry:
   fallbackChains:
     default:
-      - anthropic/claude-sonnet-4-6
-      - openrouter/deepseek/deepseek-v4-pro
+      - openai-codex/gpt-5.6-terra
+      - openrouter/moonshotai/kimi-k3
     task:
-      - anthropic/claude-sonnet-4-6
-      - openrouter/moonshotai/kimi-k2.7-code
+      - openai-codex/gpt-5.6-terra
+      - openrouter/deepseek/deepseek-v4-pro
     plan:
-      - anthropic/claude-opus-4-7
+      - anthropic/claude-opus-5
       - openrouter/z-ai/glm-5.2
     slow:
-      - anthropic/claude-opus-4-7
+      - anthropic/claude-opus-5
       - openrouter/z-ai/glm-5.2
     smol:
-      - anthropic/claude-haiku-4-5
+      - openai-codex/gpt-5.6-luna
       - openrouter/deepseek/deepseek-v4-flash
 codexResets:
   autoRedeem: "yes"
