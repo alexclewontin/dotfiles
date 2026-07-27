@@ -18,7 +18,7 @@ retry:
     smol:
       - github-copilot/gpt-5.4-mini
 memory:
-  backend: local
+  backend: mnemopi
 task:
   enableLsp: true
   eager: always
@@ -41,9 +41,26 @@ bash:
   enabled: true
 theme:
   dark: moss
-dev:
-  autoqaConsent: granted
 providers:
+  memoryModel: online
   webSearch: searxng
 searxng:
   endpoint: https://search.svc.olympus.lewont.in
+recap:
+  enabled: false
+features:
+  unexpectedStopDetection: true
+compaction:
+  idleEnabled: true
+  idleTimeoutSeconds: 300
+mnemopi:
+  proactiveLinking: true
+autolearn:
+  enabled: true
+  autoContinue: true
+lsp:
+  diagnosticsOnEdit: true
+bashInterceptor:
+  enabled: true
+shellMinimizer:
+  sourceOutlineLevel: default
