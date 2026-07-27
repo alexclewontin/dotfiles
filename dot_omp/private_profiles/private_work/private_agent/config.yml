@@ -41,3 +41,9 @@ bash:
   enabled: true
 theme:
   dark: moss
+dev:
+  autoqaConsent: granted
+providers:
+  webSearch: searxng
+searxng:
+  endpoint: https://search.svc.olympus.lewont.in
