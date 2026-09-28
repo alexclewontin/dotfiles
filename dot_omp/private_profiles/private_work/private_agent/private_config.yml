@@ -1,57 +1,56 @@
-# omp agent config (personal profile) — reconciled with live 2026-09-22.
-# Model ids verified against `omp models <provider>`; role/key names against `omp config list`.
+# omp agent config (work profile) — reconciled with live 2026-09-22.
+# GitHub Copilot primary, OpenRouter as the cross-provider fallback tier.
 modelRoles:
-  default: anthropic/claude-opus-5-5
-  task: anthropic/claude-sonnet-5-5
-  plan: anthropic/claude-opus-5-5:max
-  slow: openai-codex/gpt-6-astra:max
-  smol: anthropic/claude-haiku-4-5
-  vision: openrouter/google/gemini-3.8-flash
-  advisor: openai-codex/gpt-6-sol
-  commit: anthropic/claude-haiku-4-5
-  memory: anthropic/claude-haiku-4-5
+  default: github-copilot/claude-opus-5.5
+  task: github-copilot/claude-sonnet-5.5
+  plan: github-copilot/claude-opus-5.5:max
+  slow: github-copilot/gpt-6-astra:max
+  smol: github-copilot/claude-haiku-4.5
+  vision: github-copilot/gemini-3.8-flash
+  advisor: github-copilot/gpt-6-sol
+  commit: github-copilot/gpt-5-mini
+  memory: github-copilot/gpt-5-mini
+  tiny: github-copilot/gpt-5-mini
   web: web/exa
-  judge: typesafe/jev-latest
+  judge: openrouter/~typesafe/jev-latest
 retry:
   usageAwareFallback: true
   fallbackChains:
     default:
-      - openai-codex/gpt-6-sol
+      - github-copilot/gpt-6-sol
       - openrouter/moonshotai/kimi-k3
     task:
-      - openai-codex/gpt-5.6-terra
+      - github-copilot/gpt-5.6-terra
       - openrouter/moonshotai/kimi-k3
     plan:
-      - openai-codex/gpt-6-sol:max
+      - github-copilot/gpt-6-sol:max
       - openrouter/z-ai/glm-5.3
     slow:
-      - anthropic/claude-opus-5-5:max
+      - github-copilot/claude-opus-5.5:max
       - openrouter/deepseek/deepseek-v4-pro
     smol:
-      - openai-codex/gpt-6-luna
+      - github-copilot/gpt-6-luna
       - openrouter/z-ai/glm-5.3-flash
     vision:
-      - anthropic/claude-opus-5-5
-      - openai-codex/gpt-6-sol
+      - github-copilot/claude-opus-5.5
       - openrouter/qwen/qwen3.8-max-prime
     advisor:
-      - anthropic/claude-sonnet-5-5
+      - github-copilot/claude-sonnet-5.5
       - openrouter/z-ai/glm-5.3
     commit:
-      - openai-codex/gpt-6-luna
+      - github-copilot/gpt-6-luna
       - openrouter/deepseek/deepseek-v4.1-flash
     memory:
-      - openai-codex/gpt-6-luna
+      - github-copilot/gpt-6-luna
       - openrouter/deepseek/deepseek-v4.1-flash
+    tiny:
+      - github-copilot/gpt-5-mini
+      - openrouter/qwen/qwen3.8-flash
     web:
       - web/duckduckgo
       - web/searxng
     judge:
-      - typesafe/jev-preview
-      - openrouter/~typesafe/jev-latest
       - "@smol"
-codexResets:
-  autoRedeem: "yes"
 memory:
   backend: mnemopi
 mnemopi:
@@ -79,10 +78,6 @@ shellMinimizer:
   sourceOutlineLevel: default
 searxng:
   endpoint: https://search.svc.olympus.lewont.in
-browser:
-  headless: false
-  cmux: false
-  enabled: false
 compaction:
   idleEnabled: true
   idleTimeoutSeconds: 300
@@ -108,5 +103,5 @@ theme:
 composer:
   shape: claude
 dev:
-  autoqaConsent: granted
+  autoqaConsent: denied
 setupVersion: 2
